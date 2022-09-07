@@ -1,4 +1,5 @@
 #!/usr/bin/env php
+
 <?php
 $autoloadPath1 = __DIR__ . '/../../../autoload.php';
 $autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
@@ -7,8 +8,6 @@ if (file_exists($autoloadPath1)) {
 } else {
     require_once $autoloadPath2;
 }
-
-use function Differ\Differ\genDiff;
 
 $doc = <<<DOC
 Generate diff
@@ -27,5 +26,3 @@ DOC;
 
 require('vendor/docopt/docopt/src/docopt.php');
 $args = Docopt::handle($doc, array('version'=>'Generate diff 1.0'));
-foreach ($args as $k=>$v)
-    echo $k.': '.json_encode($v).PHP_EOL;
