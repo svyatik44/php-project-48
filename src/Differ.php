@@ -14,7 +14,7 @@ function buildTree(array $firstArray, array $secondArray)
             return ['key' => $key, 'value' => $firstArray[$key], 'type' => '-'];
         }
         if ($firstArray[$key] == $secondArray[$key]) {
-            return ['key' => $key, 'value'=> $firstArray[$key], 'type' => 'unchanged'];
+            return ['key' => $key, 'value' => $firstArray[$key], 'type' => 'unchanged'];
         }
         return ['key' => $key, 'oldValue' => $firstArray[$key],
                 'newValue' => $secondArray[$key], 'type' => '-+'];
@@ -42,7 +42,7 @@ function gendiff(string $pathToFile1, string $pathToFile2)
 
     $tree = buildTree($firstArray, $secondArray);
 
-    $list = array_map(function($node) {
+    $list = array_map(function ($node) {
         switch ($node['type']) {
             case '+':
                 return "  + {$node['key']} : {$node['value']}\n";
