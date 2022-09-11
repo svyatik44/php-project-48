@@ -1,0 +1,37 @@
+name: tests
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+        with:
+            php-version: '7.4'
+
+        - name: 
+          uses:
+
+        - name: install
+          run: make install
+
+        -name: linter
+          run: make lint
+
+        -name: testDiffer
+          run: make test
+
+        -name: test-coverage
+          run: make test-coverage
+
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        with:
+          coverageCommand: make test-coverage
+          coverageLocations: ${{github.workplace}}/build/logs/clover.xml:clover
+          debug: true

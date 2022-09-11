@@ -32,6 +32,15 @@ function toString($array)
     return $res;
 }
 
+function showBool($value)
+{
+    if (is_bool($value)) {
+        return $value ? 'true' : 'false';
+    } else {
+        return $value;
+    }
+}
+
 function gendiff(string $pathToFile1, string $pathToFile2)
 {
     $decode1 = json_decode(file_get_contents($pathToFile1));
@@ -45,18 +54,23 @@ function gendiff(string $pathToFile1, string $pathToFile2)
     $list = array_map(function ($node) {
         switch ($node['type']) {
             case '+':
-                return "  + {$node['key']} : {$node['value']}\n";
+                $value = showBool($node['value']);
+                return "  + {$node['key']} : {$value}\n";
                 break;
             case '-':
-                return "  - {$node['key']} : {$node['value']}\n";
+                $value = showBool($node['value']);
+                return "  - {$node['key']} : {$value}\n";
                 break;
             case 'unchanged':
-                return "    {$node['key']} : {$node['value']}\n";
+                $value = showBool($node['value']);
+                return "    {$node['key']} : {$value}\n";
                 break;
             case '-+':
-                return "  - {$node['key']} : {$node['oldValue']}\n  + {$node['key']} : {$node['newValue']}\n";
+                $newValue = showBool($node['newValue']);
+                $oldValue = showBool($node['oldValue']);
+                return "  - {$node['key']} : {$oldValue}\n  + {$node['key']} : {$newValue}\n";
             default:
-                print_r("error, default case\n");
+                throw new \Exception("error, default case\n");
                 break;
         }
     }, $tree);
