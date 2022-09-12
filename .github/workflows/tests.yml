@@ -9,27 +9,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
       - name: Setup
         uses: shivammathur/setup-php@v2
         with:
           php-version: '7.4'
-        - name: install
-          run: make install
 
-        -name: linter
-          run: make lint
+      - name: install
+        run: make install
 
-        -name: testDiffer
-          run: make test
+      -name: linter
+        run: make lint
 
-        -name: test-coverage
-          run: make test-coverage
+      -name: testDiffer
+        run: make test
 
-        env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-        with:
-          coverageCommand: make test-coverage
-          coverageLocations: ${{github.workplace}}clover.xml:clover
-          debug: true
+      -name: test-coverage
+        run: make test-coverage
+
+      env:
+        CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+      with:
+        coverageCommand: make test-coverage
+        coverageLocations: ${{github.workplace}}clover.xml:clover
+        debug: true
