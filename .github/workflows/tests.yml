@@ -19,13 +19,13 @@ jobs:
       - name: install
         run: make install
 
-      -name: linter
+      - name: linter
         run: make lint
 
-      -name: testDiffer
+      - name: testDiffer
         run: make test
 
-      -name: test-coverage
+      - name: test-coverage
         run: make test-coverage
 
       env:
