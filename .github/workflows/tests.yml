@@ -1,22 +1,20 @@
 name: tests
-
 on:
   push:
-    branches:
-      - main
+    branches:      
+       - main
 
 jobs:
-  build:
+  build:  
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v1
+
+      - name: Setup
+        uses: shivammathur/setup-php@v2
         with:
-            php-version: '7.4'
-
-        - name: 
-          uses:
-
+          php-version: '7.4'
         - name: install
           run: make install
 
@@ -33,5 +31,5 @@ jobs:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
           coverageCommand: make test-coverage
-          coverageLocations: ${{github.workplace}}/build/logs/clover.xml:clover
+          coverageLocations: ${{github.workplace}}clover.xml:clover
           debug: true
