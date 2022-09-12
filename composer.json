@@ -9,6 +9,10 @@
         },
         "files": ["src/Differ.php"]
     },
+    "scripts": {
+        "phpcs": "phpcs",
+        "test": "phpunit tests"
+    },
     "require": {
         "docopt/docopt": "^1.0"
     },

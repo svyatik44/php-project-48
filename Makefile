@@ -2,10 +2,10 @@ install:
 	composer install
 
 test:
-	composer exec --verbose phpunit tests
+	composer run-script phpcs -- --standard=PSR12 src bin tests
 
 lint:
-	composer exec --verbose phpcs -- --standard=PSR12 src bin tests
+	composer run-script test
 
 test-coverage:
 	XDEBUG_MODE=coverage composer exec --verbose phpunit tests -- --coverage-clover clover.xml --coverage-filter src
