@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1662993466">
-  <project timestamp="1662993466">
+<coverage generated="1662995115">
+  <project timestamp="1662995115">
     <file name="/mnt/d/php-project-2/php-project-48/src/Differ.php">
       <line num="7" type="stmt" count="1"/>
       <line num="8" type="stmt" count="1"/>
@@ -42,11 +42,12 @@
       <line num="70" type="stmt" count="1"/>
       <line num="71" type="stmt" count="1"/>
       <line num="73" type="stmt" count="0"/>
+      <line num="74" type="stmt" count="0"/>
       <line num="77" type="stmt" count="1"/>
       <line num="78" type="stmt" count="1"/>
       <line num="79" type="stmt" count="1"/>
-      <metrics loc="81" ncloc="81" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="43" coveredstatements="42" elements="43" coveredelements="42"/>
+      <metrics loc="81" ncloc="81" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="44" coveredstatements="42" elements="44" coveredelements="42"/>
     </file>
-    <metrics files="1" loc="81" ncloc="81" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="43" coveredstatements="42" elements="43" coveredelements="42"/>
+    <metrics files="1" loc="81" ncloc="81" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="44" coveredstatements="42" elements="44" coveredelements="42"/>
   </project>
 </coverage>

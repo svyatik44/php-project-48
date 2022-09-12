@@ -1,4 +1,5 @@
 name: tests
+
 on:
   push:
     branches:      
@@ -9,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
       - uses: actions/checkout@v2
 
       - name: Setup
@@ -24,13 +26,13 @@ jobs:
 
       - name: testDiffer
         run: make test
+        
+      - name: code-coverage
+        uses: paambaati/codeclimate-action@v2.7.5
 
-      - name: test-coverage
-        run: make test-coverage
-
-      env:
-        CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-      with:
-        coverageCommand: make test-coverage
-        coverageLocations: ${{github.workplace}}clover.xml:clover
-        debug: true
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        with:
+          coverageCommand: make test-coverage
+          coverageLocations: ${{github.workplace}}/build/logs/clover.xml:clover
+          debug: true

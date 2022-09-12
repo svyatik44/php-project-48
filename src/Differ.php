@@ -70,7 +70,7 @@ function gendiff(string $pathToFile1, string $pathToFile2)
                 $oldValue = showBool($node['oldValue']);
                 return "  - {$node['key']} : {$oldValue}\n  + {$node['key']} : {$newValue}\n";
             default:
-                throw new \Exception("error, default case\n");
+                print_r("error, default case\n");
                 break;
         }
     }, $tree);
