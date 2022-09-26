@@ -9,6 +9,10 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
+use function Differ\Differ\genDiff;
+use function Parser\Parse;
+
+
 $doc = <<<DOC
 Generate diff
 
@@ -24,5 +28,5 @@ Options:
 
 DOC;
 
-require('vendor/docopt/docopt/src/docopt.php');
 $args = Docopt::handle($doc, array('version'=>'Generate diff 1.0'));
+print_r(genDiff($args['<firstFile>'], $args['<secondFile>'], $args['--format']));
