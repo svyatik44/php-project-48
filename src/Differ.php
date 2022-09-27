@@ -13,7 +13,7 @@ function toString($array)
     foreach ($array as $value) {
         $res .= $value;
     }
-    return "{\n$res}\n";
+    return "{\n$res}";
 }
 
 function showBool($value)
