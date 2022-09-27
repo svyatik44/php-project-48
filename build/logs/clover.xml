@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1664295194">
-  <project timestamp="1664295194">
+<coverage generated="1664295477">
+  <project timestamp="1664295477">
     <file name="/mnt/d/php-project-2/php-project-48/src/BuildTree.php">
       <line num="7" type="stmt" count="1"/>
       <line num="8" type="stmt" count="1"/>
@@ -54,8 +54,8 @@
       <line num="14" type="stmt" count="0"/>
       <line num="15" type="stmt" count="0"/>
       <line num="19" type="stmt" count="0"/>
-      <metrics loc="22" ncloc="22" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="2" elements="5" coveredelements="2"/>
+      <metrics loc="23" ncloc="23" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="2" elements="5" coveredelements="2"/>
     </file>
-    <metrics files="3" loc="109" ncloc="109" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="46" coveredstatements="41" elements="46" coveredelements="41"/>
+    <metrics files="3" loc="110" ncloc="110" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="46" coveredstatements="41" elements="46" coveredelements="41"/>
   </project>
 </coverage>
