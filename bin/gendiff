@@ -10,8 +10,6 @@ if (file_exists($autoloadPath1)) {
 }
 
 use function Differ\Differ\genDiff;
-use function Parser\Parse;
-
 
 $doc = <<<DOC
 Generate diff

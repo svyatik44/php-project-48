@@ -6,24 +6,7 @@ use Symfony\Component\Yaml\Yaml;
 
 use function Parser\Parse;
 use function BuildTree\buildTree;
-
-function toString($array)
-{
-    $res = "";
-    foreach ($array as $value) {
-        $res .= $value;
-    }
-    return "{\n$res}";
-}
-
-function showBool($value)
-{
-    if (is_bool($value)) {
-        return $value ? 'true' : 'false';
-    } else {
-        return $value;
-    }
-}
+use function Differ\Format\formatToString;
 
 function gendiff(string $pathToFile1, string $pathToFile2)
 {
@@ -32,30 +15,8 @@ function gendiff(string $pathToFile1, string $pathToFile2)
 
     $tree = buildTree($firstArray, $secondArray);
 
-    $list = array_map(function ($node) {
-        switch ($node['type']) {
-            case '+':
-                $value = showBool($node['value']);
-                return "  + {$node['key']}: {$value}\n";
-                break;
-            case '-':
-                $value = showBool($node['value']);
-                return "  - {$node['key']}: {$value}\n";
-                break;
-            case 'unchanged':
-                $value = showBool($node['value']);
-                return "    {$node['key']}: {$value}\n";
-                break;
-            case '-+':
-                $newValue = showBool($node['newValue']);
-                $oldValue = showBool($node['oldValue']);
-                return "  - {$node['key']}: {$oldValue}\n  + {$node['key']}: {$newValue}\n";
-            default:
-                print_r("error, default case\n");
-                break;
-        }
-    }, $tree);
+    $list = formatToString($tree);
+    $result = "{" . PHP_EOL . implode(PHP_EOL, $list) . PHP_EOL . "}";
 
-    $result = toString($list);
     return $result;
 }
