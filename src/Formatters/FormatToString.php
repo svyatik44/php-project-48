@@ -75,3 +75,9 @@ function formatToString($tree, $depth = 0)
 
     return $list;
 }
+
+function format($formatedTree)
+{
+    $implodeIndent = implode(PHP_EOL, formatToString($formatedTree));
+    return "{" . PHP_EOL . $implodeIndent . PHP_EOL . "}";
+}
