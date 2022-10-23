@@ -4,7 +4,15 @@
     "bin": ["bin/gendiff"],
 
     "autoload": {
-        "files": ["src/Differ.php", "src/Parser.php", "src/BuildTree.php", "src/Formatters/FormatToString.php", "src/Formatters/FormatParser.php", "src/Formatters/Plain.php"],
+        "files": [
+            "src/Differ.php", 
+            "src/Parser.php", 
+            "src/BuildTree.php", 
+            "src/Formatters/FormatToString.php", 
+            "src/Formatters/FormatParser.php", 
+            "src/Formatters/FormatToPlain.php", 
+            "src/Formatters/FormatToJson.php"
+        ],
         "psr-4": {
             "Gendiff\\Tests\\": "tests"
         }

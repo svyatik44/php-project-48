@@ -2,11 +2,8 @@
 
 namespace Differ\Differ;
 
-use Symfony\Component\Yaml\Yaml;
-
 use function Parser\Parse;
 use function BuildTree\buildTree;
-use function Differ\Format\formatToString;
 use function Format\Parser\parseFormat;
 
 function gendiff(string $pathToFile1, string $pathToFile2, string $format)

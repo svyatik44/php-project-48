@@ -1,6 +1,6 @@
 <?php
 
-namespace Differ\Format;
+namespace Format\Stylish;
 
 function toString(array $arrayValue, int $depth): string
 {

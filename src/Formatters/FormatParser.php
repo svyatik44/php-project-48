@@ -2,18 +2,19 @@
 
 namespace Format\Parser;
 
-use function Differ\Format\format;
-use function Differ\Plain\formats;
+use Format\Stylish;
+use Format\Plain;
+use Format\Json;
 
 function parseFormat(string $format, array $tree)
 {
     switch ($format) {
         case 'stylish':
-            return format($tree);
-                break;
+            return Stylish\format($tree);
         case 'plain':
-            return formats($tree);
-                break;
+            return Plain\format($tree);
+        case 'json':
+            return Json\format($tree);
         default:
             throw new Exception("Undefined format type");
                 break;

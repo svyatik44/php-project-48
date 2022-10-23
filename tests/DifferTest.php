@@ -10,7 +10,7 @@ class DifferTest extends TestCase
 {
     public function testGendiff(): void
     {
-        $expected = file_get_contents("tests/fixtures/CorrectDiffer.txt");
+        $expected = file_get_contents("tests/fixtures/CorrectDifferJsonTree.txt");
         $this->assertEquals($expected, gendiff("tests/fixtures/file1.json", "tests/fixtures/file2.json", "stylish"));
 
         $expected2 = file_get_contents("tests/fixtures/CorrectDifferYaml.txt");
@@ -18,5 +18,8 @@ class DifferTest extends TestCase
 
         $expected3 = file_get_contents("tests/fixtures/CorrectDifferPlain.txt");
         $this->assertEquals($expected3, gendiff("tests/fixtures/file1.json", "tests/fixtures/file2.json", "plain"));
+
+        $expected4 = file_get_contents("tests/fixtures/CorrectDifferJson.txt");
+        $this->assertEquals($expected4, gendiff("tests/fixtures/file1.json", "tests/fixtures/file2.json", "json"));
     }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1666545288">
-  <project timestamp="1666545288">
+<coverage generated="1666548801">
+  <project timestamp="1666548801">
     <file name="/mnt/d/php-project-2/php-project-48/src/BuildTree.php">
       <line num="7" type="stmt" count="1"/>
       <line num="8" type="stmt" count="1"/>
@@ -19,21 +19,60 @@
       <metrics loc="29" ncloc="29" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="14" elements="14" coveredelements="14"/>
     </file>
     <file name="/mnt/d/php-project-2/php-project-48/src/Differ.php">
+      <line num="11" type="stmt" count="1"/>
+      <line num="12" type="stmt" count="1"/>
       <line num="14" type="stmt" count="1"/>
-      <line num="15" type="stmt" count="1"/>
-      <line num="17" type="stmt" count="1"/>
-      <line num="19" type="stmt" count="1"/>
-      <line num="21" type="stmt" count="1"/>
-      <metrics loc="23" ncloc="23" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="5" coveredelements="5"/>
+      <line num="16" type="stmt" count="1"/>
+      <line num="18" type="stmt" count="1"/>
+      <metrics loc="20" ncloc="20" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="5" coveredelements="5"/>
     </file>
     <file name="/mnt/d/php-project-2/php-project-48/src/Formatters/FormatParser.php">
+      <line num="11" type="stmt" count="1"/>
+      <line num="12" type="stmt" count="1"/>
+      <line num="13" type="stmt" count="1"/>
+      <line num="14" type="stmt" count="1"/>
+      <line num="15" type="stmt" count="1"/>
+      <line num="16" type="stmt" count="1"/>
+      <line num="17" type="stmt" count="1"/>
+      <line num="19" type="stmt" count="0"/>
+      <metrics loc="23" ncloc="23" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="7" elements="8" coveredelements="7"/>
+    </file>
+    <file name="/mnt/d/php-project-2/php-project-48/src/Formatters/FormatToJson.php">
+      <line num="7" type="stmt" count="1"/>
+      <metrics loc="9" ncloc="9" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="1" coveredelements="1"/>
+    </file>
+    <file name="/mnt/d/php-project-2/php-project-48/src/Formatters/FormatToPlain.php">
+      <line num="7" type="stmt" count="1"/>
+      <line num="8" type="stmt" count="1"/>
+      <line num="9" type="stmt" count="1"/>
       <line num="10" type="stmt" count="1"/>
       <line num="11" type="stmt" count="1"/>
       <line num="12" type="stmt" count="1"/>
       <line num="14" type="stmt" count="1"/>
       <line num="15" type="stmt" count="1"/>
-      <line num="18" type="stmt" count="0"/>
-      <metrics loc="22" ncloc="22" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="5" elements="6" coveredelements="5"/>
+      <line num="17" type="stmt" count="1"/>
+      <line num="18" type="stmt" count="1"/>
+      <line num="20" type="stmt" count="1"/>
+      <line num="21" type="stmt" count="1"/>
+      <line num="22" type="stmt" count="1"/>
+      <line num="23" type="stmt" count="1"/>
+      <line num="24" type="stmt" count="1"/>
+      <line num="25" type="stmt" count="1"/>
+      <line num="26" type="stmt" count="1"/>
+      <line num="29" type="stmt" count="0"/>
+      <line num="30" type="stmt" count="0"/>
+      <line num="33" type="stmt" count="1"/>
+      <line num="38" type="stmt" count="1"/>
+      <line num="39" type="stmt" count="1"/>
+      <line num="40" type="stmt" count="1"/>
+      <line num="45" type="stmt" count="1"/>
+      <line num="46" type="stmt" count="1"/>
+      <line num="48" type="stmt" count="1"/>
+      <line num="49" type="stmt" count="1"/>
+      <line num="51" type="stmt" count="1"/>
+      <line num="52" type="stmt" count="1"/>
+      <line num="54" type="stmt" count="1"/>
+      <metrics loc="56" ncloc="56" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="30" coveredstatements="28" elements="30" coveredelements="28"/>
     </file>
     <file name="/mnt/d/php-project-2/php-project-48/src/Formatters/FormatToString.php">
       <line num="7" type="stmt" count="1"/>
@@ -83,39 +122,6 @@
       <line num="82" type="stmt" count="1"/>
       <metrics loc="84" ncloc="84" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="45" coveredstatements="43" elements="45" coveredelements="43"/>
     </file>
-    <file name="/mnt/d/php-project-2/php-project-48/src/Formatters/Plain.php">
-      <line num="7" type="stmt" count="1"/>
-      <line num="8" type="stmt" count="1"/>
-      <line num="9" type="stmt" count="1"/>
-      <line num="10" type="stmt" count="1"/>
-      <line num="11" type="stmt" count="1"/>
-      <line num="12" type="stmt" count="1"/>
-      <line num="14" type="stmt" count="1"/>
-      <line num="15" type="stmt" count="1"/>
-      <line num="17" type="stmt" count="1"/>
-      <line num="18" type="stmt" count="1"/>
-      <line num="20" type="stmt" count="1"/>
-      <line num="21" type="stmt" count="1"/>
-      <line num="22" type="stmt" count="1"/>
-      <line num="23" type="stmt" count="1"/>
-      <line num="24" type="stmt" count="1"/>
-      <line num="25" type="stmt" count="1"/>
-      <line num="26" type="stmt" count="1"/>
-      <line num="29" type="stmt" count="0"/>
-      <line num="30" type="stmt" count="0"/>
-      <line num="33" type="stmt" count="1"/>
-      <line num="38" type="stmt" count="1"/>
-      <line num="39" type="stmt" count="1"/>
-      <line num="40" type="stmt" count="1"/>
-      <line num="45" type="stmt" count="1"/>
-      <line num="46" type="stmt" count="1"/>
-      <line num="48" type="stmt" count="1"/>
-      <line num="49" type="stmt" count="1"/>
-      <line num="51" type="stmt" count="1"/>
-      <line num="52" type="stmt" count="1"/>
-      <line num="54" type="stmt" count="1"/>
-      <metrics loc="56" ncloc="56" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="30" coveredstatements="28" elements="30" coveredelements="28"/>
-    </file>
     <file name="/mnt/d/php-project-2/php-project-48/src/Parser.php">
       <line num="9" type="stmt" count="1"/>
       <line num="11" type="stmt" count="1"/>
@@ -124,6 +130,6 @@
       <line num="19" type="stmt" count="0"/>
       <metrics loc="23" ncloc="23" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="2" elements="5" coveredelements="2"/>
     </file>
-    <metrics files="6" loc="237" ncloc="237" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="105" coveredstatements="97" elements="105" coveredelements="97"/>
+    <metrics files="7" loc="244" ncloc="244" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="108" coveredstatements="100" elements="108" coveredelements="100"/>
   </project>
 </coverage>

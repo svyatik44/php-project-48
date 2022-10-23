@@ -1,6 +1,6 @@
 <?php
 
-namespace Differ\Plain;
+namespace Format\Plain;
 
 function formatToPlain($tree, $path = '')
 {
@@ -33,7 +33,7 @@ function formatToPlain($tree, $path = '')
     return array_filter($result);
 }
 
-function formats(array $data): string
+function format(array $data): string
 {
     $lines = formatToPlain($data);
     $str = implode(PHP_EOL, $lines);
