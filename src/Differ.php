@@ -6,7 +6,7 @@ use function Parser\Parse;
 use function BuildTree\buildTree;
 use function Format\Parser\parseFormat;
 
-function gendiff(string $pathToFile1, string $pathToFile2, string $format)
+function gendiff(string $pathToFile1, string $pathToFile2, string $format = 'stylish')
 {
     $firstArray = Parse(pathinfo($pathToFile1, PATHINFO_EXTENSION), file_get_contents($pathToFile1));
     $secondArray = Parse(pathinfo($pathToFile2, PATHINFO_EXTENSION), file_get_contents($pathToFile2));
