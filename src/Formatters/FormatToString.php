@@ -20,7 +20,7 @@ function showBool($value, $depth)
     if (is_bool($value)) {
         return $value ? 'true' : 'false';
     }
-    if ($value === null) {
+    if (is_null($value)) {
         return 'null';
     }
 

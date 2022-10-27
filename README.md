@@ -4,3 +4,7 @@
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/svyatik44/php-project-48/workflows/hexlet-check/badge.svg)](https://github.com/svyatik44/php-project-48/actions)
+
+Вычислитель отличий - утилита для поиска отличий в конфигурационных файлах
+
+[![asciicast](https://asciinema.org/a/skmymGkomBLMbs1N6jX7zqfEZ.svg)](https://asciinema.org/a/skmymGkomBLMbs1N6jX7zqfEZ)
