@@ -14,7 +14,7 @@ function buildTree(array $firstArray, array $secondArray)
         if (!array_key_exists($key, $secondArray)) {
             return ['key' => $key, 'value' => $firstArray[$key], 'type' => '-'];
         }
-        if ($firstArray[$key] == $secondArray[$key]) {
+        if ($firstArray[$key] === $secondArray[$key]) {
             return ['key' => $key, 'value' => $firstArray[$key], 'type' => 'unchanged'];
         }
         if (is_array($firstArray[$key]) && is_array($secondArray[$key])) {
