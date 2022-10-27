@@ -2,12 +2,10 @@
 
 namespace BuildTree;
 
-use function Functional\sort;
-
 function buildTree(array $firstArray, array $secondArray)
 {
     $keys = array_unique(array_merge(array_keys($firstArray), array_keys($secondArray)));
-    $sortedKeys = sort($keys, fn ($left, $right) => $left <=> $right);
+    sort($keys);
 
     $map = array_map(function ($key) use ($firstArray, $secondArray) {
         if (!array_key_exists($key, $firstArray)) {
@@ -24,7 +22,7 @@ function buildTree(array $firstArray, array $secondArray)
         }
         return ['key' => $key, 'oldValue' => $firstArray[$key],
                 'newValue' => $secondArray[$key], 'type' => '-+'];
-    }, $sortedKeys);
+    }, $keys);
 
     return $map;
 }
