@@ -43,7 +43,7 @@ function format(array $data): string
 function showValue($value)
 {
     if (is_numeric($value)) {
-        return "'{$value}'";
+        return "{$value}";
     }
     if (is_bool($value)) {
         return $value ? 'true' : 'false';
