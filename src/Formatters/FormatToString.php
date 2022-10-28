@@ -7,7 +7,7 @@ function toString(array $arrayValue, int $depth): string
     $keys = array_keys($arrayValue);
     $inDepth = $depth + 1;
     $result = array_map(function ($key) use ($arrayValue, $inDepth): string {
-        $val = showBool($arrayValue[$key], $inDepth);
+        $val = showValue($arrayValue[$key], $inDepth);
         $indent = getIndent($inDepth);
         $result = PHP_EOL . "{$indent}{$key}: {$val}";
         return $result;
@@ -15,7 +15,7 @@ function toString(array $arrayValue, int $depth): string
     return implode('', $result);
 }
 
-function showBool($value, $depth)
+function showValue(mixed $value, int $depth): string
 {
     if (is_bool($value)) {
         return $value ? 'true' : 'false';
@@ -34,12 +34,12 @@ function showBool($value, $depth)
     return "{$value}";
 }
 
-function getIndent($depth)
+function getIndent(int $depth): string
 {
     return str_repeat('    ', $depth);
 }
 
-function formatToString($tree, $depth = 0)
+function formatToString(array $tree, int $depth = 0): array
 {
     $indent = getIndent($depth);
     $nextDepth = $depth + 1;
@@ -47,20 +47,20 @@ function formatToString($tree, $depth = 0)
     $list = array_map(function ($node) use ($indent, $nextDepth) {
         switch ($node['type']) {
             case '+':
-                $value = showBool($node['value'], $nextDepth);
+                $value = showValue($node['value'], $nextDepth);
                 return "{$indent}  + {$node['key']}: {$value}";
                 break;
             case '-':
-                $value = showBool($node['value'], $nextDepth);
+                $value = showValue($node['value'], $nextDepth);
                 return "{$indent}  - {$node['key']}: {$value}";
                 break;
             case 'unchanged':
-                $value = showBool($node['value'], $nextDepth);
+                $value = showValue($node['value'], $nextDepth);
                 return "{$indent}    {$node['key']}: {$value}";
                 break;
             case '-+':
-                $newValue = showBool($node['newValue'], $nextDepth);
-                $oldValue = showBool($node['oldValue'], $nextDepth);
+                $newValue = showValue($node['newValue'], $nextDepth);
+                $oldValue = showValue($node['oldValue'], $nextDepth);
                 return "{$indent}  - {$node['key']}: {$oldValue}" .
                 PHP_EOL . "{$indent}  + {$node['key']}: {$newValue}";
             case 'array':
@@ -76,7 +76,7 @@ function formatToString($tree, $depth = 0)
     return $list;
 }
 
-function format($formatedTree)
+function format(array $formatedTree): string
 {
     $implodeIndent = implode(PHP_EOL, formatToString($formatedTree));
     return "{" . PHP_EOL . $implodeIndent . PHP_EOL . "}";

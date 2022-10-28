@@ -2,7 +2,7 @@
 
 namespace Format\Plain;
 
-function formatToPlain($tree, $path = '')
+function formatToPlain(array $tree, string $path = ''): array
 {
     $result = array_map(function ($node) use ($path) {
         $property = "{$path}{$node['key']}";
@@ -40,7 +40,7 @@ function format(array $data): string
     return $str;
 }
 
-function showValue($value)
+function showValue(mixed $value): string
 {
     if (is_numeric($value)) {
         return "{$value}";

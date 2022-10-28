@@ -6,7 +6,7 @@ use Format\Stylish;
 use Format\Plain;
 use Format\Json;
 
-function parseFormat(string $format, array $tree)
+function parseFormat(string $format, array $tree): string
 {
     switch ($format) {
         case 'stylish':
@@ -17,6 +17,5 @@ function parseFormat(string $format, array $tree)
             return Json\format($tree);
         default:
             throw new Exception("Undefined format type");
-                break;
     }
 }

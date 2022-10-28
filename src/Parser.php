@@ -4,19 +4,15 @@ namespace Parser;
 
 use Symfony\Component\Yaml\Yaml;
 
-function Parse(string $type, string $data)
+function Parse(string $type, string $data): array
 {
     switch ($type) {
-        case 'yaml' || 'yml':
-            return Yaml::parse($data);
-                break;
-
         case 'json':
-            return (array)json_decode($data);
-                break;
-
+            return json_decode($data, true);
+        case 'yml':
+        case 'yaml':
+            return Yaml::parse($data);
         default:
             throw new Exception("Unknown path extension");
-                break;
     }
 }

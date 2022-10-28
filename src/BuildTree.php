@@ -2,7 +2,7 @@
 
 namespace BuildTree;
 
-function buildTree(array $firstArray, array $secondArray)
+function buildTree(array $firstArray, array $secondArray): array
 {
     $keys = array_unique(array_merge(array_keys($firstArray), array_keys($secondArray)));
     sort($keys);
