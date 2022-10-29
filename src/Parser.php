@@ -8,12 +8,11 @@ function Parse(string $type, string $data): array
 {
     switch ($type) {
         case 'json':
-            return (array)json_decode($data);
+            return json_decode($data, true);
         case 'yml':
         case 'yaml':
             return Yaml::parse($data);
         default:
-            print_r("Unknown path extension");
-            break;
+            throw new Exception("Unknown path extension");
     }
 }

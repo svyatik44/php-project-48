@@ -16,7 +16,6 @@ function parseFormat(string $format, array $tree): string
         case 'json':
             return Json\format($tree);
         default:
-            print_r("Undefined format type");
-            break;
+            throw new Exception("Undefined format type");
     }
 }
