@@ -49,15 +49,12 @@ function formatToString(array $tree, int $depth = 0): array
             case '+':
                 $value = showValue($node['value'], $nextDepth);
                 return "{$indent}  + {$node['key']}: {$value}";
-                break;
             case '-':
                 $value = showValue($node['value'], $nextDepth);
                 return "{$indent}  - {$node['key']}: {$value}";
-                break;
             case 'unchanged':
                 $value = showValue($node['value'], $nextDepth);
                 return "{$indent}    {$node['key']}: {$value}";
-                break;
             case '-+':
                 $newValue = showValue($node['newValue'], $nextDepth);
                 $oldValue = showValue($node['oldValue'], $nextDepth);
@@ -66,13 +63,11 @@ function formatToString(array $tree, int $depth = 0): array
             case 'array':
                 $stringNested = implode(PHP_EOL, formatToString($node['child'], $nextDepth));
                 return "{$indent}    {$node['key']}: {" . PHP_EOL . "{$stringNested}" . PHP_EOL . "{$indent}    }";
-                break;
             default:
                 print_r("error, default case\n");
                 break;
         }
     }, $tree);
-
     return $list;
 }
 

@@ -10,13 +10,10 @@ function formatToPlain(array $tree, string $path = ''): array
             case '+':
                 $value = showValue($node['value']);
                 return "Property '{$property}' was added with value: {$value}";
-                break;
             case '-':
                 return "Property '{$property}' was removed";
-                break;
             case 'unchanged':
                 return '';
-                break;
             case '-+':
                 $oldValue = showValue($node['oldValue']);
                 $newValue = showValue($node['newValue']);
@@ -24,7 +21,6 @@ function formatToPlain(array $tree, string $path = ''): array
             case 'array':
                 $path2 = "{$path}{$node['key']}.";
                 return implode(PHP_EOL, formatToPlain($node['child'], $path2));
-                break;
             default:
                 print_r("error, default case\n");
                 break;
