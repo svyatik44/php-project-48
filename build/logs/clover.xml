@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1667037910">
-  <project timestamp="1667037910">
+<coverage generated="1667045342">
+  <project timestamp="1667045342">
     <file name="/mnt/d/php-project-2/php-project-48/src/BuildTree.php">
       <line num="9" type="stmt" count="1"/>
       <line num="10" type="stmt" count="1"/>
