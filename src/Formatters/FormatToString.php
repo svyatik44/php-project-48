@@ -65,7 +65,6 @@ function formatToString(array $tree, int $depth = 0): array
                 return "{$indent}    {$node['key']}: {" . PHP_EOL . "{$stringNested}" . PHP_EOL . "{$indent}    }";
             default:
                 throw new \Exception("error, default case");
-                break;
         }
     }, $tree);
     return $list;

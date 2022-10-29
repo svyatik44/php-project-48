@@ -23,7 +23,6 @@ function formatToPlain(array $tree, string $path = ''): array
                 return implode(PHP_EOL, formatToPlain($node['child'], $path2));
             default:
                 throw new \Exception("error, default case");
-                break;
         }
     }, $tree);
     return array_filter($result);
