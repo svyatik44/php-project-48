@@ -8,8 +8,8 @@ use function Format\Parser\parseFormat;
 
 function gendiff(string $pathToFile1, string $pathToFile2, string $format = 'stylish'): string
 {
-    $firstArray = Parse(pathinfo($pathToFile1, PATHINFO_EXTENSION), $pathToFile1);
-    $secondArray = Parse(pathinfo($pathToFile2, PATHINFO_EXTENSION), $pathToFile2);
+    $firstArray = Parse($pathToFile1);
+    $secondArray = Parse($pathToFile2);
 
     $tree = buildTree($firstArray, $secondArray);
 
