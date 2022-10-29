@@ -13,6 +13,6 @@ function Parse(string $type, string $data): array
         case 'yaml':
             return Yaml::parse($data);
         default:
-            throw new Exception("Unknown path extension");
+            throw new \Exception("Unknown path extension");
     }
 }
