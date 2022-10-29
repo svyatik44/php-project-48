@@ -22,7 +22,7 @@ function formatToPlain(array $tree, string $path = ''): array
                 $path2 = "{$path}{$node['key']}.";
                 return implode(PHP_EOL, formatToPlain($node['child'], $path2));
             default:
-                print_r("error, default case\n");
+                throw new \Exception("error, default case");
                 break;
         }
     }, $tree);
