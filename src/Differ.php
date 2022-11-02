@@ -2,16 +2,16 @@
 
 namespace Differ\Differ;
 
-use function Parser\Parse;
+use function Parser\parse;
 use function BuildTree\buildTree;
 use function Format\Parser\parseFormat;
 
-function gendiff(string $pathToFile1, string $pathToFile2, string $format = 'stylish'): string
+function genDiff(string $pathToFile1, string $pathToFile2, string $format = 'stylish'): string
 {
-    $firstArray = Parse($pathToFile1);
-    $secondArray = Parse($pathToFile2);
+    $firstCollection = parse($pathToFile1);
+    $secondCollection = parse($pathToFile2);
 
-    $tree = buildTree($firstArray, $secondArray);
+    $tree = buildTree($firstCollection, $secondCollection);
 
     $formatedTree = parseFormat($format, $tree);
 

@@ -6,7 +6,7 @@ use Symfony\Component\Yaml\Yaml;
 
 use function FileReader\readFile;
 
-function Parse(string $path): array
+function parse(string $path): array
 {
     $type = pathinfo($path, PATHINFO_EXTENSION);
     $data = readFile($path);

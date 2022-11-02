@@ -9,7 +9,7 @@
             "src/Parser.php", 
             "src/BuildTree.php",
             "src/FileReader.php",
-            "src/Formatters/FormatToString.php", 
+            "src/Formatters/FormatToStylish.php", 
             "src/Formatters/FormatParser.php", 
             "src/Formatters/FormatToPlain.php", 
             "src/Formatters/FormatToJson.php"

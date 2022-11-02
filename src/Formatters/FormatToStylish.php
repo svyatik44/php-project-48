@@ -39,7 +39,7 @@ function getIndent(int $depth): string
     return str_repeat('    ', $depth);
 }
 
-function formatToString(array $tree, int $depth = 0): array
+function formatToStylish(array $tree, int $depth = 0): array
 {
     $indent = getIndent($depth);
     $nextDepth = $depth + 1;
@@ -61,7 +61,7 @@ function formatToString(array $tree, int $depth = 0): array
                 return "{$indent}  - {$node['key']}: {$oldValue}" .
                 PHP_EOL . "{$indent}  + {$node['key']}: {$newValue}";
             case 'array':
-                $stringNested = implode(PHP_EOL, formatToString($node['child'], $nextDepth));
+                $stringNested = implode(PHP_EOL, formatToStylish($node['child'], $nextDepth));
                 return "{$indent}    {$node['key']}: {" . PHP_EOL . "{$stringNested}" . PHP_EOL . "{$indent}    }";
             default:
                 throw new \Exception("error, default case");
@@ -72,6 +72,6 @@ function formatToString(array $tree, int $depth = 0): array
 
 function format(array $formatedTree): string
 {
-    $implodeIndent = implode(PHP_EOL, formatToString($formatedTree));
+    $implodeIndent = implode(PHP_EOL, formatToStylish($formatedTree));
     return "{" . PHP_EOL . $implodeIndent . PHP_EOL . "}";
 }
