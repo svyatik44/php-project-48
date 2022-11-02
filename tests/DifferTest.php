@@ -20,14 +20,14 @@ class DifferTest extends TestCase
     public function dataProvider(): array
     {
         return [
-            ["tests/fixtures/CorrectDifferJsonToStylish.txt", "tests/fixtures/file1.json", "tests/fixtures/file2.json"],
-            ["tests/fixtures/CorrectDifferYamlToStylish.txt", "tests/fixtures/file1.yml", "tests/fixtures/file2.yml"],
-            ["tests/fixtures/CorrectDifferJsonToStylish.txt", "tests/fixtures/file1.json", "tests/fixtures/file2.json", "stylish"],
-            ["tests/fixtures/CorrectDifferYamlToStylish.txt", "tests/fixtures/file1.yml", "tests/fixtures/file2.yml", "stylish"],
-            ["tests/fixtures/CorrectDifferJsonToPlain.txt", "tests/fixtures/file1.json", "tests/fixtures/file2.json", "plain"],
-            ["tests/fixtures/CorrectDifferYamlToPlain.txt", "tests/fixtures/file1.yml", "tests/fixtures/file2.yml", "plain"],
-            ["tests/fixtures/CorrectDifferJson.txt", "tests/fixtures/file1.json", "tests/fixtures/file2.json", "json"],
-            ["tests/fixtures/CorrectDifferYamlToJson.txt", "tests/fixtures/file1.yml", "tests/fixtures/file2.yml", "json"],
+            ["tests/fixtures/CorrectJsonStylish.txt", "tests/fixtures/file1.json", "tests/fixtures/file2.json"],
+            ["tests/fixtures/CorrectYamlStylish.txt", "tests/fixtures/file1.yml", "tests/fixtures/file2.yml"],
+            ["tests/fixtures/CorrectJsonStylish.txt", "tests/fixtures/file1.json", "tests/fixtures/file2.json", "stylish"],
+            ["tests/fixtures/CorrectYamlStylish.txt", "tests/fixtures/file1.yml", "tests/fixtures/file2.yml", "stylish"],
+            ["tests/fixtures/CorrectJsonPlain.txt", "tests/fixtures/file1.json", "tests/fixtures/file2.json", "plain"],
+            ["tests/fixtures/CorrectYamlPlain.txt", "tests/fixtures/file1.yml", "tests/fixtures/file2.yml", "plain"],
+            ["tests/fixtures/CorrectJson.txt", "tests/fixtures/file1.json", "tests/fixtures/file2.json", "json"],
+            ["tests/fixtures/CorrectYamlJson.txt", "tests/fixtures/file1.yml", "tests/fixtures/file2.yml", "json"],
         ];
     }
 }
