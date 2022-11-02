@@ -19,15 +19,16 @@ class DifferTest extends TestCase
 
     public function dataProvider(): array
     {
+        $path = "tests/fixtures/";
         return [
-            ["tests/fixtures/CorrectJsonStylish.txt", "tests/fixtures/file1.json", "tests/fixtures/file2.json"],
-            ["tests/fixtures/CorrectYamlStylish.txt", "tests/fixtures/file1.yml", "tests/fixtures/file2.yml"],
-            ["tests/fixtures/CorrectJsonStylish.txt", "tests/fixtures/file1.json", "tests/fixtures/file2.json", "stylish"],
-            ["tests/fixtures/CorrectYamlStylish.txt", "tests/fixtures/file1.yml", "tests/fixtures/file2.yml", "stylish"],
-            ["tests/fixtures/CorrectJsonPlain.txt", "tests/fixtures/file1.json", "tests/fixtures/file2.json", "plain"],
-            ["tests/fixtures/CorrectYamlPlain.txt", "tests/fixtures/file1.yml", "tests/fixtures/file2.yml", "plain"],
-            ["tests/fixtures/CorrectJson.txt", "tests/fixtures/file1.json", "tests/fixtures/file2.json", "json"],
-            ["tests/fixtures/CorrectYamlJson.txt", "tests/fixtures/file1.yml", "tests/fixtures/file2.yml", "json"],
+            ["{$path}CorrectJsonStylish.txt", "{$path}file1.json", "{$path}file2.json"],
+            ["{$path}CorrectYamlStylish.txt", "{$path}file1.yml", "{$path}file2.yml"],
+            ["{$path}CorrectJsonStylish.txt", "{$path}file1.json", "{$path}file2.json", "stylish"],
+            ["{$path}CorrectYamlStylish.txt", "{$path}file1.yml", "{$path}file2.yml", "stylish"],
+            ["{$path}CorrectJsonPlain.txt", "{$path}file1.json", "{$path}file2.json", "plain"],
+            ["{$path}CorrectYamlPlain.txt", "{$path}file1.yml", "{$path}file2.yml", "plain"],
+            ["{$path}CorrectJson.txt", "{$path}file1.json", "{$path}file2.json", "json"],
+            ["{$path}CorrectYamlJson.txt", "{$path}file1.yml", "{$path}file2.yml", "json"]
         ];
     }
 }
