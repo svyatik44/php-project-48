@@ -11,24 +11,44 @@ class DifferTest extends TestCase
     /**
      * @dataProvider dataProvider
      */
-    public function testGendiff($correct, $file1, $file2, $type = 'stylish'): void
+    public function testGendiffDefault($file1, $file2): void
     {
-        $expected = file_get_contents($correct);
-        $this->assertEquals($expected, genDiff($file1, $file2, $type));
+        $expected = file_get_contents("tests/fixtures/CorrectStylish.txt");
+        $this->assertEquals($expected, genDiff("tests/fixtures/file1.yml", "tests/fixtures/file2.yml"));
+    }
+
+    /**
+     * @dataProvider dataProvider
+     */
+    public function testGendiffStylish($file1, $file2): void
+    {
+        $expected = file_get_contents("tests/fixtures/CorrectStylish.txt");
+        $this->assertEquals($expected, genDiff($file1, $file2, "stylish"));
+    }
+
+    /**
+     * @dataProvider dataProvider
+     */
+    public function testGendiffPlain($file1, $file2): void
+    {
+        $expected = file_get_contents("tests/fixtures/CorrectPlain.txt");
+        $this->assertEquals($expected, genDiff($file1, $file2, "plain"));
+    }
+
+    /**
+     * @dataProvider dataProvider
+     */
+    public function testGendiffJson($file1, $file2): void
+    {
+        $expected = file_get_contents("tests/fixtures/CorrectJson.txt");
+        $this->assertEquals($expected, genDiff($file1, $file2, "json"));
     }
 
     public function dataProvider(): array
     {
-        $path = "tests/fixtures/";
         return [
-            ["{$path}CorrectJsonStylish.txt", "{$path}file1.json", "{$path}file2.json"],
-            ["{$path}CorrectYamlStylish.txt", "{$path}file1.yml", "{$path}file2.yml"],
-            ["{$path}CorrectJsonStylish.txt", "{$path}file1.json", "{$path}file2.json", "stylish"],
-            ["{$path}CorrectYamlStylish.txt", "{$path}file1.yml", "{$path}file2.yml", "stylish"],
-            ["{$path}CorrectJsonPlain.txt", "{$path}file1.json", "{$path}file2.json", "plain"],
-            ["{$path}CorrectYamlPlain.txt", "{$path}file1.yml", "{$path}file2.yml", "plain"],
-            ["{$path}CorrectJson.txt", "{$path}file1.json", "{$path}file2.json", "json"],
-            ["{$path}CorrectYamlJson.txt", "{$path}file1.yml", "{$path}file2.yml", "json"]
+            ["tests/fixtures/file1.json", "tests/fixtures/file2.json"],
+            ["tests/fixtures/file1.yml", "tests/fixtures/file2.yml"],
         ];
     }
 }

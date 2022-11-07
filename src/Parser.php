@@ -6,10 +6,8 @@ use Symfony\Component\Yaml\Yaml;
 
 use function FileReader\readFile;
 
-function parse(string $path): array
+function parse(string $data, string $type): array
 {
-    $type = pathinfo($path, PATHINFO_EXTENSION);
-    $data = readFile($path);
     switch ($type) {
         case 'json':
             return json_decode($data, true);
