@@ -4,9 +4,7 @@ namespace Parser;
 
 use Symfony\Component\Yaml\Yaml;
 
-use function FileReader\readFile;
-
-function parse(string $data, string $type): array
+function parse($data, string $type): array
 {
     switch ($type) {
         case 'json':
