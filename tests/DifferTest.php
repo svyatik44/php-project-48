@@ -14,7 +14,7 @@ class DifferTest extends TestCase
     public function testGendiffDefault($file1, $file2): void
     {
         $expected = file_get_contents("tests/fixtures/CorrectStylish.txt");
-        $this->assertEquals($expected, genDiff("tests/fixtures/file1.yml", "tests/fixtures/file2.yml"));
+        $this->assertEquals($expected, genDiff($file1, $file2));
     }
 
     /**
