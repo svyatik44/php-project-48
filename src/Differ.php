@@ -22,7 +22,7 @@ function buildTree(array $firstCollection, array $secondCollection): array
             return ['key' => $key, 'value' => $firstCollection[$key], 'type' => 'unchanged'];
         }
         if (is_array($firstCollection[$key]) && is_array($secondCollection[$key])) {
-            return ['key' => $key, 'type' => 'array', 'child' => 
+            return ['key' => $key, 'type' => 'array', 'child' =>
             buildTree($firstCollection[$key], $secondCollection[$key])];
         }
         return ['key' => $key, 'oldValue' => $firstCollection[$key],
