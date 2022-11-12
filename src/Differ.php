@@ -4,7 +4,6 @@ namespace Differ\Differ;
 
 use function Parser\parse;
 use function Format\Parser\parseFormat;
-
 use function Functional\sort;
 
 function buildTree(array $firstCollection, array $secondCollection): array
@@ -23,7 +22,8 @@ function buildTree(array $firstCollection, array $secondCollection): array
             return ['key' => $key, 'value' => $firstCollection[$key], 'type' => 'unchanged'];
         }
         if (is_array($firstCollection[$key]) && is_array($secondCollection[$key])) {
-            return ['key' => $key, 'type' => 'array', 'child' => buildTree($firstCollection[$key], $secondCollection[$key])];
+            return ['key' => $key, 'type' => 'array', 'child' => 
+            buildTree($firstCollection[$key], $secondCollection[$key])];
         }
         return ['key' => $key, 'oldValue' => $firstCollection[$key],
                 'newValue' => $secondCollection[$key], 'type' => '-+'];
